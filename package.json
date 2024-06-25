@@ -1,0 +1,7 @@
+{
+  "name": "@0918nobita/subtyped-dom-test",
+  "version": "0.1.0",
+  "devDependencies": {
+    "happy-dom": "14.12.3"
+  }
+}
