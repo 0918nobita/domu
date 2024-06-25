@@ -1,12 +1,45 @@
 import { Browser } from 'happy-dom';
 
-export function example() {
-  const browser = new Browser();
-  const page = browser.newPage();
+/**
+ * @typedef {import('happy-dom').BrowserPage} BrowserPage
+ * @typedef {import('happy-dom').BrowserFrame} BrowserFrame
+ */
 
-  page.content = "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Example</title></head><body><p>(happy-dom) Hello from test page</p></body></html>";
+/**
+ * @returns {Browser}
+ */
+export function createBrowser() {
+  return new Browser();
+}
 
-  console.log(page.mainFrame.document.body.textContent);
+/**
+ * @param {Browser} browser
+ * @returns {BrowserPage}
+ */
+export function newPage(browser) {
+  return browser.newPage();
+}
 
-  void browser.close();
+/**
+ * @param {BrowserPage} page
+ * @param {string} content
+ */
+export function setContent(page, content) {
+  page.content = content;
+}
+
+/**
+ * @param {BrowserPage} page
+ * @returns {BrowserFrame}
+ */
+export function mainFrame(page) {
+  return page.mainFrame;
+}
+
+/**
+ * @param {BrowserFrame} frame
+ * @returns {import('happy-dom').Document}
+ */
+export function document(frame) {
+  return frame.document;
 }
