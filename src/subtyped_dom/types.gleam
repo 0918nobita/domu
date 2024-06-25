@@ -29,6 +29,14 @@ pub type HTMLElementLike(a) =
 pub type HTMLElement =
   HTMLElementLike(Concrete)
 
+pub type TagHTMLBodyElement(a)
+
+pub type HTMLBodyElementLike(a) =
+  HTMLElementLike(TagHTMLBodyElement(a))
+
+pub type HTMLBodyElement =
+  HTMLBodyElementLike(Concrete)
+
 pub type TagDocument(a)
 
 pub type DocumentLike(a) =
