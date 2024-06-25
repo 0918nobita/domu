@@ -2,15 +2,24 @@
 
 ## Instance properties
 
-- [ ] baseURI (readonly)
-- [ ] childNodes (readonly)
-- [ ] firstChild (readonly)
-- [ ] isConnected (readonly)
-- [ ] lastChild (readonly)
-- [ ] nextSibling (readonly)
+### Readonly
+
+- [ ] baseURI
+- [ ] childNodes
+- [ ] firstChild
+- [ ] isConnected
+- [ ] lastChild
+- [ ] nextSibling
+- [ ] nodeName
+- [ ] nodeType
+
+### Writable
+
 - [x] textContent
 
 ## Instance methods
 
 - [x] appendChild
-- [ ] cloneNode
+- [x] cloneNode
+- [ ] compareDocumentPosition
+- [ ] contains
