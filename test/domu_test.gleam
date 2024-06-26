@@ -23,7 +23,7 @@ fn init_doc() -> types.Document {
 
 pub fn create_element_test() {
   let doc = init_doc()
-  let assert Some(body) = document.body(doc)
+  let body = document.body(doc)
 
   let el = doc |> document.create_element("p")
   el |> node.set_text_content("Hello, world!")

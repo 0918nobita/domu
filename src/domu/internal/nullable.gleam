@@ -6,7 +6,7 @@ pub type Nullable(t)
 fn is_null(nullable: Nullable(t)) -> Bool
 
 @external(javascript, "../../nullable_ffi.mjs", "unsafeUnwrap")
-fn unsafe_unwrap(nullable: Nullable(t)) -> t
+pub fn unsafe_unwrap(nullable: Nullable(t)) -> t
 
 pub fn to_option(nullable: Nullable(t)) -> Option(t) {
   case is_null(nullable) {
