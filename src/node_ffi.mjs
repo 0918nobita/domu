@@ -1,5 +1,13 @@
 /**
  * @param {Node} node
+ * @returns {NodeList}
+ */
+export function childNodes(node) {
+  return node.childNodes;
+}
+
+/**
+ * @param {Node} node
  * @returns {string | null}
  */
 export function textContent(node) {

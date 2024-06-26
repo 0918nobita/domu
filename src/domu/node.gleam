@@ -1,6 +1,11 @@
 import domu/internal/nullable.{type Nullable}
+import domu/node_list.{type Live, type NodeList}
 import domu/types.{type Document, type Node, type NodeLike}
 import gleam/option.{type Option}
+
+/// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
+@external(javascript, "../node_ffi.mjs", "childNodes")
+pub fn child_nodes(node: NodeLike(a)) -> NodeList(Live)
 
 @external(javascript, "../node_ffi.mjs", "textContent")
 fn text_content_internal(node: NodeLike(a)) -> Nullable(String)

@@ -5,7 +5,7 @@
 ### Readonly
 
 - [ ] baseURI
-- [ ] childNodes
+- [x] childNodes
 - [ ] firstChild
 - [ ] isConnected
 - [ ] lastChild

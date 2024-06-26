@@ -8,8 +8,12 @@
 
 ## Instance methods
 
-- [ ] entries
+- [x] entries
 - [ ] forEach
-- [ ] item
+- [x] item
 - [ ] keys
 - [ ] values
+
+## Helper functions
+
+- [ ] to_list
