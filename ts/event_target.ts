@@ -4,19 +4,21 @@ type AddEventListenerOptions = {
   capture: boolean;
   once: boolean;
   passive: Option$<boolean>;
-  abort_signal: Option$<AbortSignal>;
+  signal: Option$<AbortSignal>;
 };
 
-type JSAddEventListenerOptions =
-  Pick<AddEventListenerOptions, 'capture' | 'once'> & { passive?: boolean; signal?: AbortSignal };
+type JsAddEventListenerOptions = Pick<
+  AddEventListenerOptions,
+  'capture' | 'once'
+> & { passive?: boolean; signal?: AbortSignal };
 
 export const addEventListener = (
   eventTarget: EventTarget,
   type: string,
   listener: (event: Event) => void,
-  options: AddEventListenerOptions
+  options: AddEventListenerOptions,
 ): void => {
-  const addEventListenerOptions: JSAddEventListenerOptions = {
+  const addEventListenerOptions: JsAddEventListenerOptions = {
     capture: options.capture,
     once: options.once,
   };
@@ -25,8 +27,8 @@ export const addEventListener = (
     addEventListenerOptions.passive = options.passive[0];
   }
 
-  if (options.abort_signal instanceof Some) {
-    addEventListenerOptions.signal = options.abort_signal[0];
+  if (options.signal instanceof Some) {
+    addEventListenerOptions.signal = options.signal[0];
   }
 
   eventTarget.addEventListener(type, listener, addEventListenerOptions);

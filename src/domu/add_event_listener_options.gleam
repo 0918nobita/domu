@@ -6,7 +6,7 @@ pub type AddEventListenerOptions(a) {
     capture: Bool,
     once: Bool,
     passive: Option(Bool),
-    abort_signal: Option(AbortSignalLike(a)),
+    signal: Option(AbortSignalLike(a)),
   )
 }
 
@@ -15,7 +15,7 @@ pub fn default() -> AddEventListenerOptions(a) {
     capture: False,
     once: False,
     passive: None,
-    abort_signal: None,
+    signal: None,
   )
 }
 
@@ -40,7 +40,7 @@ pub fn passive(
   AddEventListenerOptions(..options, passive: Some(value))
 }
 
-pub fn abort_signal(
+pub fn signal(
   options: AddEventListenerOptions(a),
   value: AbortSignalLike(b),
 ) -> AddEventListenerOptions(b) {
@@ -48,6 +48,6 @@ pub fn abort_signal(
     capture: options.capture,
     once: options.once,
     passive: options.passive,
-    abort_signal: Some(value),
+    signal: Some(value),
   )
 }

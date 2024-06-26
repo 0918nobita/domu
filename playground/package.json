@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "name": "@0918nobita/domu-playground",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite"
+  }
+}
