@@ -30,3 +30,11 @@ export function appendChild(parent, child) {
 export function cloneNode(node, deep) {
   return node.cloneNode(deep)
 }
+
+/**
+ * @param {Node} node
+ * @returns {Document | null}
+ */
+export function ownerDocument(node) {
+  return node.ownerDocument
+}

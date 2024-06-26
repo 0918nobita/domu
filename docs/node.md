@@ -12,9 +12,14 @@
 - [ ] nextSibling
 - [ ] nodeName
 - [ ] nodeType
+- [x] ownerDocument
+- [ ] parentElement
+- [ ] parentNode
+- [ ] previousSibling
 
 ### Writable
 
+- [ ] nodeValue
 - [x] textContent
 
 ## Instance methods
@@ -23,3 +28,14 @@
 - [x] cloneNode
 - [ ] compareDocumentPosition
 - [ ] contains
+- [ ] getRootNode
+- [ ] hasChildNodes
+- [ ] insertBefore
+- [ ] isDefaultNamespace
+- [ ] isEqualNode
+- [ ] isSameNode
+- [ ] lookupNamespaceURI
+- [ ] lookupPrefix
+- [ ] normalize
+- [ ] removeChild
+- [ ] replaceChild

@@ -1,5 +1,5 @@
 import domu/internal/nullable.{type Nullable}
-import domu/types.{type Node, type NodeLike}
+import domu/types.{type Document, type Node, type NodeLike}
 import gleam/option.{type Option}
 
 @external(javascript, "../node_ffi.mjs", "textContent")
@@ -25,3 +25,11 @@ pub fn append_child(parent: NodeLike(a), child: NodeLike(b)) -> Nil
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/cloneNode)
 @external(javascript, "../node_ffi.mjs", "cloneNode")
 pub fn clone_node(node: NodeLike(a), deep: Bool) -> Node
+
+@external(javascript, "../node_ffi.mjs", "ownerDocument")
+fn owner_document_internal(node: NodeLike(a)) -> Nullable(Document)
+
+/// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/ownerDocument)
+pub fn owner_document(node: NodeLike(a)) -> Option(Document) {
+  node |> owner_document_internal |> nullable.to_option
+}
