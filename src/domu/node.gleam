@@ -1,6 +1,6 @@
+import domu/internal/nullable.{type Nullable}
+import domu/types.{type Node, type NodeLike}
 import gleam/option.{type Option}
-import subtyped_dom/internal/nullable.{type Nullable}
-import subtyped_dom/types.{type Node, type NodeLike}
 
 @external(javascript, "../node_ffi.mjs", "textContent")
 fn text_content_internal(node: NodeLike(a)) -> Nullable(String)

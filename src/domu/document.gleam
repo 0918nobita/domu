@@ -1,8 +1,8 @@
-import gleam/option.{type Option}
-import subtyped_dom/internal/nullable.{type Nullable}
-import subtyped_dom/types.{
+import domu/internal/nullable.{type Nullable}
+import domu/types.{
   type Document, type DocumentLike, type HTMLBodyElement, type HTMLElement,
 }
+import gleam/option.{type Option}
 
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document)
 @external(javascript, "../document_ffi.mjs", "cDocument")

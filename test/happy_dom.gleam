@@ -1,4 +1,4 @@
-import subtyped_dom/types.{type Document}
+import domu/types.{type Document}
 
 pub type Browser
 

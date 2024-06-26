@@ -1,10 +1,10 @@
+import domu/document
+import domu/node
+import domu/types
 import gleam/option.{None, Some}
 import gleeunit
 import gleeunit/should
 import happy_dom
-import subtyped_dom/document
-import subtyped_dom/node
-import subtyped_dom/types
 
 pub fn main() {
   gleeunit.main()
