@@ -1,4 +1,12 @@
 /**
+ * @param {Node} node
+ * @returns {Document | null}
+ */
+export function ofNode(node) {
+  return node instanceof Document ? node : null;
+}
+
+/**
  * @returns {Document}
  */
 export function cDocument() {

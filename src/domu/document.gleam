@@ -1,8 +1,17 @@
 import domu/internal/nullable.{type Nullable}
 import domu/types.{
   type Document, type DocumentLike, type HTMLBodyElement, type HTMLElement,
+  type NodeLike,
 }
 import gleam/option.{type Option}
+
+@external(javascript, "../document_ffi.mjs", "ofNode")
+fn of_node_internal(node: NodeLike(a)) -> Nullable(Document)
+
+/// Downcasts `Node` to `Document` if possible.
+pub fn of_node(node: NodeLike(a)) -> Option(Document) {
+  node |> of_node_internal |> nullable.to_option
+}
 
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document)
 @external(javascript, "../document_ffi.mjs", "cDocument")
