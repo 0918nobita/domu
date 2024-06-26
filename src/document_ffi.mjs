@@ -29,3 +29,11 @@ export function body(doc) {
 export function createElement(doc, tagName) {
   return doc.createElement(tagName);
 }
+
+/**
+ * @param {Document} doc
+ * @returns {HTMLAnchorElement}
+ */
+export function createAnchorElement(doc) {
+  return doc.createElement("a")
+}

@@ -1,5 +1,7 @@
 # Node
 
+`Node` → `EventTarget`
+
 ## Instance properties
 
 ### Readonly

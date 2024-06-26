@@ -47,3 +47,6 @@ pub fn create_element(
   document: DocumentLike(a),
   tag_name: String,
 ) -> HTMLElement
+
+@external(javascript, "../document_ffi.mjs", "createAnchorElement")
+pub fn create_element_a(document: DocumentLike(a)) -> types.HTMLAnchorElement

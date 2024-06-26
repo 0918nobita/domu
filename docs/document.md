@@ -1,5 +1,7 @@
 # Document
 
+`Document` → `Node` → `EventTarget`
+
 ## Instance properties
 
 ### Readonly
@@ -15,4 +17,9 @@
 
 ## Instance methods
 
-- [x] createElement
+- [ ] createElement
+  - [x] generic
+  - [x] `<a>`
+  - [ ] `<button>`
+  - [ ] `<div>`
+  - [ ] `<p>`
