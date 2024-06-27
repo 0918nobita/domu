@@ -1,9 +1,19 @@
+pub type Event
+
 pub type Concrete
 
 pub type EventTargetLike(a)
 
 pub type EventTarget =
   EventTargetLike(Concrete)
+
+pub type TagAbortSignal(a)
+
+pub type AbortSignalLike(a) =
+  EventTargetLike(TagAbortSignal(a))
+
+pub type AbortSignal =
+  AbortSignalLike(Concrete)
 
 pub type TagNode(a)
 
