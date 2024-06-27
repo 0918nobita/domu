@@ -27,8 +27,29 @@ pub fn main() {
 
 ## Development
 
+### Install dependencies
+
 ```sh
-gleam run        # Run the project
-gleam test       # Run the tests
-gleam docs build # Build the documentation
+npm i
+gleam deps download
+```
+
+### Build
+
+```sh
+gleam build   # in order to generate typescript declarations (.d.ts)
+npm run build # Compile ts/*.mts
+gleam build
+```
+
+### Test
+
+```sh
+gleam test --target javascript --runtime nodejs
+```
+
+### Generate docs
+
+```sh
+gleam docs build
 ```
