@@ -20,3 +20,14 @@ pub fn main_frame(page: BrowserPage) -> BrowserFrame
 
 @external(javascript, "./happy_dom_ffi.mjs", "document")
 pub fn document(frame: BrowserFrame) -> Document
+
+pub fn init_doc() -> types.Document {
+  let page = create_browser() |> new_page
+
+  page
+  |> set_content(
+    "<!DOCTYPE html><html><head><meta charset=\"utf-8\"></head><body></body></html>",
+  )
+
+  page |> main_frame |> document
+}
