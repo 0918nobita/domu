@@ -1,11 +1,27 @@
 version: '3'
 
 tasks:
+  install-deps-ts:
+    sources:
+      - 'package.json'
+      - 'package-lock.json'
+    cmds:
+      - npm i
+
+  install-deps-gleam:
+    sources:
+      - 'gleam.toml'
+    cmds:
+      - gleam deps download
+
+  install-deps:
+    deps: [install-deps-ts, install-deps-gleam]
+
   build:
+    deps: [install-deps]
     sources:
       - 'src/**/*.gleam'
       - 'ts/*.ts'
-      - 'gleam.toml'
     generates:
       - 'build/dev/javascript/**/*'
     cmds:
