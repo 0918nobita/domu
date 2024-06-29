@@ -34,9 +34,9 @@ export default defineConfig({
       enforce: 'pre',
       resolveId(source, _importer) {
         if (source.startsWith('@/')) {
-          return path.join("..", source.slice(2));
+          return path.join('..', source.slice(2));
         }
-      }
-    }
-  ]
+      },
+    },
+  ],
 });

@@ -16,4 +16,5 @@ export const cloneNode = (node: Node, deep: boolean): Node => {
   return node.cloneNode(deep);
 };
 
-export const ownerDocument = (node: Node): Document | null => node.ownerDocument;
+export const ownerDocument = (node: Node): Document | null =>
+  node.ownerDocument;
