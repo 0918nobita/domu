@@ -1,11 +1,9 @@
 # domu
 
-DOM library for Gleam
-
-<!--
 [![Package Version](https://img.shields.io/hexpm/v/domu)](https://hex.pm/packages/domu)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/domu/)
--->
+
+DOM library for Gleam
 
 ```sh
 gleam add domu
