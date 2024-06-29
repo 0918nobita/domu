@@ -8,13 +8,13 @@ import gleam/option.{type Option}
 pub fn child_nodes(node: NodeLike(a)) -> NodeList(Live)
 
 @external(javascript, "../node.mjs", "textContent")
-fn text_content_internal(node: NodeLike(a)) -> Nullable(String)
+fn text_content_(node: NodeLike(a)) -> Nullable(String)
 
 /// Gets `textContent` property of `Node`
 ///
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent)
 pub fn text_content(node: NodeLike(a)) -> Option(String) {
-  node |> text_content_internal |> nullable.to_option
+  node |> text_content_ |> nullable.to_option
 }
 
 /// Sets `textContent` property of `Node`
@@ -32,9 +32,9 @@ pub fn append_child(parent: NodeLike(a), child: NodeLike(b)) -> Nil
 pub fn clone_node(node: NodeLike(a), deep: Bool) -> Node
 
 @external(javascript, "../node.mjs", "ownerDocument")
-fn owner_document_internal(node: NodeLike(a)) -> Nullable(Document)
+fn owner_document_(node: NodeLike(a)) -> Nullable(Document)
 
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/ownerDocument)
 pub fn owner_document(node: NodeLike(a)) -> Option(Document) {
-  node |> owner_document_internal |> nullable.to_option
+  node |> owner_document_ |> nullable.to_option
 }

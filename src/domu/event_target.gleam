@@ -3,7 +3,7 @@ import domu/types.{type Event, type EventTargetLike}
 import gleam/option.{type Option}
 
 @external(javascript, "../event_target.mjs", "addEventListener")
-fn add_event_listener_internal(
+fn add_event_listener_(
   event_target: EventTargetLike(a),
   event_type: String,
   listener: fn(Event) -> Nil,
@@ -18,5 +18,5 @@ pub fn add_event_listener(
 ) {
   let options = options |> option.lazy_unwrap(default)
 
-  add_event_listener_internal(event_target, event_type, listener, options)
+  add_event_listener_(event_target, event_type, listener, options)
 }

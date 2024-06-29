@@ -18,7 +18,7 @@ pub fn of_node(node: NodeLike(a)) -> Option(Document) {
 pub fn document() -> Document
 
 @external(javascript, "../document.mjs", "body")
-fn body_internal(document: DocumentLike(a)) -> Nullable(HTMLBodyElement)
+fn body_(document: DocumentLike(a)) -> Nullable(HTMLBodyElement)
 
 /// Returns the `document.body` as an `Option(HTMLBodyElement)` .
 ///
@@ -26,7 +26,7 @@ fn body_internal(document: DocumentLike(a)) -> Nullable(HTMLBodyElement)
 ///
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/body)
 pub fn body_option(document: DocumentLike(a)) -> Option(HTMLBodyElement) {
-  document |> body_internal |> nullable.to_option
+  document |> body_ |> nullable.to_option
 }
 
 /// Returns the `document.body` as an `HTMLBodyElement` .
@@ -38,7 +38,7 @@ pub fn body_option(document: DocumentLike(a)) -> Option(HTMLBodyElement) {
 ///
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/body)
 pub fn body(document: DocumentLike(a)) -> HTMLBodyElement {
-  document |> body_internal |> nullable.unsafe_unwrap
+  document |> body_ |> nullable.unsafe_unwrap
 }
 
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createElement)
