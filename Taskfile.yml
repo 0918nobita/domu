@@ -1,0 +1,36 @@
+version: '3'
+
+tasks:
+  build:
+    sources:
+      - 'src/**/*.gleam'
+      - 'ts/*.ts'
+      - 'gleam.toml'
+    generates:
+      - 'build/dev/javascript/**/*'
+    cmds:
+      - gleam build
+      - npx vite build
+      - gleam build
+
+  clean:
+    - rm -rf build
+    - rm src/*.mjs
+
+  lint: npx biome lint
+
+  format-check-ts: npx biome format
+  format-check-gleam: gleam format --check
+  format-check:
+    deps: [format-check-ts, format-check-gleam]
+
+  format-ts: npx biome format --write
+  format-gleam: gleam format
+  format:
+    deps: [format-ts, format-gleam]
+
+  test:
+    deps: [build]
+    cmd: gleam test --runtime nodejs
+
+  docs: gleam docs build

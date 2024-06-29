@@ -2,10 +2,6 @@
   "type": "module",
   "name": "@0918nobita/domu-test",
   "version": "0.1.0",
-  "scripts": {
-    "typecheck": "tsc",
-    "build": "vite build"
-  },
   "devDependencies": {
     "@types/node": "20.14.9",
     "happy-dom": "14.12.3",
