@@ -3,6 +3,7 @@
   "name": "@0918nobita/domu-test",
   "version": "0.1.0",
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "@types/node": "20.14.9",
     "happy-dom": "14.12.3",
     "typescript": "5.5.2",
