@@ -24,6 +24,6 @@ jobs:
       - run: gleam deps download
       - run: npm ci
       - run: gleam build
-      - run: npm run build
+      - run: npx vite build
       - run: gleam test
       - run: gleam format --check src test
