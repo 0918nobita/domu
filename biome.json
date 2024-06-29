@@ -5,14 +5,14 @@
   },
   "linter": {
     "enabled": true,
-    "ignore": ["build", "node_modules"],
+    "ignore": ["build", "node_modules", "src/**/*.mjs"],
     "rules": {
       "all": true
     }
   },
   "formatter": {
     "enabled": true,
-    "ignore": ["build", "node_modules"],
+    "ignore": ["build", "node_modules", "src/**/*.mjs"],
     "lineWidth": 80,
     "indentWidth": 2,
     "indentStyle": "space",
