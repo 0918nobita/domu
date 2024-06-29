@@ -1,7 +1,8 @@
+import domu/internal/iterator_compat.{type JsIterator}
 import domu/internal/nullable.{type Nullable}
 import domu/types.{type Node}
 import gleam/iterator.{type Iterator}
-import gleam/option.{type Option, None, Some}
+import gleam/option.{type Option}
 
 pub type Live
 
@@ -9,21 +10,19 @@ pub type Static
 
 pub type NodeList(a)
 
-@external(javascript, "../node_list_ffi.mjs", "length")
+@external(javascript, "../node_list.mjs", "length")
 pub fn length(node_list: NodeList(a)) -> Int
 
-@external(javascript, "../node_list_ffi.mjs", "item")
-pub fn item_internal(node_list: NodeList(a), index: Int) -> Nullable(Node)
+@external(javascript, "../node_list.mjs", "item")
+pub fn item_(node_list: NodeList(a), index: Int) -> Nullable(Node)
 
 pub fn item(node_list: NodeList(a), index: Int) -> Option(Node) {
-  node_list |> item_internal(index) |> nullable.to_option
+  node_list |> item_(index) |> nullable.to_option
 }
 
+@external(javascript, "../node_list.mjs", "entries")
+fn entries_(node_list: NodeList(a)) -> JsIterator(#(Int, Node))
+
 pub fn entries(node_list: NodeList(a)) -> Iterator(#(Int, Node)) {
-  iterator.unfold(from: 0, with: fn(i) {
-    case item(node_list, i) {
-      Some(node) -> iterator.Next(element: #(i, node), accumulator: i + 1)
-      None -> iterator.Done
-    }
-  })
+  node_list |> entries_ |> iterator_compat.to_gleam_iterator
 }

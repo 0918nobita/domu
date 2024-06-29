@@ -7,19 +7,23 @@ export default defineConfig({
     lib: {
       formats: ['es'],
       entry: [
-        'ts/document_ffi.mts',
-        'ts/event_target_ffi.mts',
-        'ts/html_anchor_element_ffi.mts',
-        'ts/node_ffi.mts',
-        'ts/node_list_ffi.mts',
-        'ts/nullable_ffi.mts',
+        'ts/document.ts',
+        'ts/event_target.ts',
+        'ts/html_anchor_element.ts',
+        'ts/iterator_compat.ts',
+        'ts/node_list.ts',
+        'ts/node.ts',
+        'ts/nullable.ts',
       ],
     },
     rollupOptions: {
       output: {
         entryFileNames: '[name].mjs',
       },
-      external: ['../gleam_stdlib/gleam/option.mjs'],
+      external: [
+        '../gleam_stdlib/gleam/iterator.mjs',
+        '../gleam_stdlib/gleam/option.mjs',
+      ],
     },
     outDir: 'src',
     emptyOutDir: false,

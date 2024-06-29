@@ -2,7 +2,7 @@ import domu/add_event_listener_options.{type AddEventListenerOptions, default}
 import domu/types.{type Event, type EventTargetLike}
 import gleam/option.{type Option}
 
-@external(javascript, "../event_target_ffi.mjs", "addEventListener")
+@external(javascript, "../event_target.mjs", "addEventListener")
 fn add_event_listener_internal(
   event_target: EventTargetLike(a),
   event_type: String,

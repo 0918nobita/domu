@@ -5,7 +5,7 @@ import domu/types.{
 }
 import gleam/option.{type Option}
 
-@external(javascript, "../document_ffi.mjs", "ofNode")
+@external(javascript, "../document.mjs", "ofNode")
 fn of_node_internal(node: NodeLike(a)) -> Nullable(Document)
 
 /// Downcasts `Node` to `Document` if possible.
@@ -14,10 +14,10 @@ pub fn of_node(node: NodeLike(a)) -> Option(Document) {
 }
 
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document)
-@external(javascript, "../document_ffi.mjs", "cDocument")
+@external(javascript, "../document.mjs", "cDocument")
 pub fn document() -> Document
 
-@external(javascript, "../document_ffi.mjs", "body")
+@external(javascript, "../document.mjs", "body")
 fn body_internal(document: DocumentLike(a)) -> Nullable(HTMLBodyElement)
 
 /// Returns the `document.body` as an `Option(HTMLBodyElement)` .
@@ -42,11 +42,11 @@ pub fn body(document: DocumentLike(a)) -> HTMLBodyElement {
 }
 
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createElement)
-@external(javascript, "../document_ffi.mjs", "createElement")
+@external(javascript, "../document.mjs", "createElement")
 pub fn create_element(
   document: DocumentLike(a),
   tag_name: String,
 ) -> HTMLElement
 
-@external(javascript, "../document_ffi.mjs", "createAnchorElement")
+@external(javascript, "../document.mjs", "createAnchorElement")
 pub fn create_element_a(document: DocumentLike(a)) -> types.HTMLAnchorElement
