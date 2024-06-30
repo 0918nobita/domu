@@ -1,6 +1,25 @@
-pub type Event
-
 pub type Concrete
+
+pub type EventLike(a)
+
+pub type Event =
+  EventLike(Concrete)
+
+pub type TagUIEvent(a)
+
+pub type UIEventLike(a) =
+  EventLike(TagUIEvent(a))
+
+pub type UIEvent =
+  UIEventLike(Concrete)
+
+pub type TagMouseEvent(a)
+
+pub type MouseEventLike(a) =
+  UIEventLike(TagMouseEvent(a))
+
+pub type MouseEvent =
+  MouseEventLike(Concrete)
 
 pub type EventTargetLike(a)
 
