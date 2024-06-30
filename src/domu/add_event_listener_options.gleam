@@ -19,6 +19,7 @@ pub fn default() -> AddEventListenerOptions(a) {
   )
 }
 
+/// [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener#capture)
 pub fn capture(
   options: AddEventListenerOptions(a),
   value: Bool,
@@ -26,6 +27,7 @@ pub fn capture(
   AddEventListenerOptions(..options, capture: value)
 }
 
+/// [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener#once)
 pub fn once(
   options: AddEventListenerOptions(a),
   value: Bool,
@@ -33,6 +35,7 @@ pub fn once(
   AddEventListenerOptions(..options, once: value)
 }
 
+/// [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener#passive)
 pub fn passive(
   options: AddEventListenerOptions(a),
   value: Bool,
@@ -40,6 +43,7 @@ pub fn passive(
   AddEventListenerOptions(..options, passive: Some(value))
 }
 
+/// [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener#signal)
 pub fn signal(
   options: AddEventListenerOptions(a),
   value: AbortSignalLike(b),

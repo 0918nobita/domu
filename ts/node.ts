@@ -12,9 +12,8 @@ export const appendChild = (parent: Node, child: Node): void => {
   parent.appendChild(child);
 };
 
-export const cloneNode = (node: Node, deep: boolean): Node => {
-  return node.cloneNode(deep);
-};
+export const cloneNode = (node: Node, deep: boolean): Node =>
+  node.cloneNode(deep);
 
 export const ownerDocument = (node: Node): Document | null =>
   node.ownerDocument;
