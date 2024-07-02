@@ -1,5 +1,5 @@
 name = "domu"
-version = "0.1.1"
+version = "0.2.0"
 description = "DOM library for Gleam"
 licences = ["Apache-2.0"]
 repository = { type = "github", user = "0918nobita", repo = "domu" }
