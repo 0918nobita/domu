@@ -8,7 +8,7 @@ fn add_event_listener_(
   event_target: EventTargetLike(a),
   event_type: String,
   listener: fn(b) -> Nil,
-  options: AddEventListenerOptions(b),
+  options: AddEventListenerOptions(c),
 ) -> Nil
 
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener)
@@ -16,7 +16,7 @@ pub fn add_event_listener(
   event_target: EventTargetLike(a),
   event_type: EventType(b),
   listener: fn(b) -> Nil,
-  options: Option(AddEventListenerOptions(b)),
+  options: Option(AddEventListenerOptions(c)),
 ) {
   let EventType(event_type) = event_type
   let options = options |> option.lazy_unwrap(default)
