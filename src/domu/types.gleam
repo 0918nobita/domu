@@ -13,6 +13,14 @@ pub type UIEventLike(a) =
 pub type UIEvent =
   UIEventLike(Concrete)
 
+pub type InputEventTag(a)
+
+pub type InputEventLike(a) =
+  UIEventLike(InputEventTag(a))
+
+pub type InputEvent =
+  InputEventLike(Concrete)
+
 pub type MouseEventTag(a)
 
 pub type MouseEventLike(a) =
