@@ -42,6 +42,14 @@ pub type EventTargetLike(a)
 pub type EventTarget =
   EventTargetLike(Concrete)
 
+pub type WindowTag(a)
+
+pub type WindowLike(a) =
+  EventTargetLike(WindowTag(a))
+
+pub type Window =
+  WindowLike(Concrete)
+
 pub type AbortSignalTag(a)
 
 pub type AbortSignalLike(a) =

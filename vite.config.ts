@@ -7,6 +7,7 @@ export default defineConfig({
     lib: {
       formats: ['es'],
       entry: [
+        'ts/console.ts',
         'ts/document.ts',
         'ts/event_target.ts',
         'ts/event.ts',
@@ -15,6 +16,7 @@ export default defineConfig({
         'ts/node_list.ts',
         'ts/node.ts',
         'ts/nullable.ts',
+        'ts/window.ts',
       ],
     },
     rollupOptions: {

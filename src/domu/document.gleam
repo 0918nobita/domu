@@ -14,7 +14,7 @@ pub fn of_node(node: NodeLike(a)) -> Option(Document) {
 }
 
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document)
-@external(javascript, "../document.mjs", "cDocument")
+@external(javascript, "../document.mjs", "getDocument")
 pub fn document() -> Document
 
 @external(javascript, "../document.mjs", "body")
