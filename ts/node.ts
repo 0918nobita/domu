@@ -1,6 +1,4 @@
-export const childNodes = (node: Node): NodeList => {
-  return node.childNodes;
-};
+export const childNodes = (node: Node): NodeList => node.childNodes;
 
 export const textContent = (node: Node): string | null => node.textContent;
 

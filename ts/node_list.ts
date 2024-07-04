@@ -1,6 +1,4 @@
-export const length = (nodeList: NodeList): number => {
-  return nodeList.length;
-};
+export const length = (nodeList: NodeList): number => nodeList.length;
 
 export const item = (nodeList: NodeList, index: number): Node | null =>
   nodeList.item(index);
