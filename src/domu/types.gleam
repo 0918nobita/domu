@@ -5,26 +5,26 @@ pub type EventLike(a)
 pub type Event =
   EventLike(Concrete)
 
-pub type TagUIEvent(a)
+pub type UIEventTag(a)
 
 pub type UIEventLike(a) =
-  EventLike(TagUIEvent(a))
+  EventLike(UIEventTag(a))
 
 pub type UIEvent =
   UIEventLike(Concrete)
 
-pub type TagMouseEvent(a)
+pub type MouseEventTag(a)
 
 pub type MouseEventLike(a) =
-  UIEventLike(TagMouseEvent(a))
+  UIEventLike(MouseEventTag(a))
 
 pub type MouseEvent =
   MouseEventLike(Concrete)
 
-pub type TagPointerEvent(a)
+pub type PointerEventTag(a)
 
 pub type PointerEventLike(a) =
-  MouseEventLike(TagPointerEvent(a))
+  MouseEventLike(PointerEventTag(a))
 
 pub type PointerEvent =
   PointerEventLike(Concrete)
@@ -34,58 +34,58 @@ pub type EventTargetLike(a)
 pub type EventTarget =
   EventTargetLike(Concrete)
 
-pub type TagAbortSignal(a)
+pub type AbortSignalTag(a)
 
 pub type AbortSignalLike(a) =
-  EventTargetLike(TagAbortSignal(a))
+  EventTargetLike(AbortSignalTag(a))
 
 pub type AbortSignal =
   AbortSignalLike(Concrete)
 
-pub type TagNode(a)
+pub type NodeTag(a)
 
 pub type NodeLike(a) =
-  EventTargetLike(TagNode(a))
+  EventTargetLike(NodeTag(a))
 
 pub type Node =
   NodeLike(Concrete)
 
-pub type TagElement(a)
+pub type ElementTag(a)
 
 pub type ElementLike(a) =
-  NodeLike(TagElement(a))
+  NodeLike(ElementTag(a))
 
 pub type Element =
   ElementLike(Concrete)
 
-pub type TagHTMLElement(a)
+pub type HTMLElementTag(a)
 
 pub type HTMLElementLike(a) =
-  ElementLike(TagHTMLElement(a))
+  ElementLike(HTMLElementTag(a))
 
 pub type HTMLElement =
   HTMLElementLike(Concrete)
 
-pub type TagHTMLAnchorElement(a)
+pub type HTMLAnchorElementTag(a)
 
 pub type HTMLAnchorElementLike(a) =
-  HTMLElementLike(TagHTMLAnchorElement(a))
+  HTMLElementLike(HTMLAnchorElementTag(a))
 
 pub type HTMLAnchorElement =
   HTMLAnchorElementLike(Concrete)
 
-pub type TagHTMLBodyElement(a)
+pub type HTMLBodyElementTag(a)
 
 pub type HTMLBodyElementLike(a) =
-  HTMLElementLike(TagHTMLBodyElement(a))
+  HTMLElementLike(HTMLBodyElementTag(a))
 
 pub type HTMLBodyElement =
   HTMLBodyElementLike(Concrete)
 
-pub type TagDocument(a)
+pub type DocumentTag(a)
 
 pub type DocumentLike(a) =
-  NodeLike(TagDocument(a))
+  NodeLike(DocumentTag(a))
 
 pub type Document =
   DocumentLike(Concrete)
