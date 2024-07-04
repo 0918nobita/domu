@@ -6,11 +6,11 @@ import domu/types.{
 import gleam/option.{type Option}
 
 @external(javascript, "../document.mjs", "ofNode")
-fn of_node_internal(node: NodeLike(a)) -> Nullable(Document)
+fn of_node_(node: NodeLike(a)) -> Nullable(Document)
 
 /// Downcasts `Node` to `Document` if possible.
 pub fn of_node(node: NodeLike(a)) -> Option(Document) {
-  node |> of_node_internal |> nullable.to_option
+  node |> of_node_ |> nullable.to_option
 }
 
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document)
