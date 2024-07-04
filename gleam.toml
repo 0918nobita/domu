@@ -1,14 +1,13 @@
+# For a full reference of all the available options, you can have a look at
+# https://gleam.run/writing-gleam/gleam-toml/.
+
 name = "domu"
 version = "0.3.0"
 description = "DOM library for Gleam"
 licences = ["Apache-2.0"]
 repository = { type = "github", user = "0918nobita", repo = "domu" }
 target = "javascript"
-
-# links = [{ title = "Website", href = "https://gleam.run" }]
-#
-# For a full reference of all the available options, you can have a look at
-# https://gleam.run/writing-gleam/gleam-toml/.
+links = [{ title = "Sponsor", href = "https://github.com/sponsors/0918nobita" }]
 
 [dependencies]
 gleam_stdlib = ">= 0.34.0 and < 2.0.0"
