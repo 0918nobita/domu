@@ -9,6 +9,7 @@ export default defineConfig({
       entry: [
         'ts/document.ts',
         'ts/event_target.ts',
+        'ts/event.ts',
         'ts/html_anchor_element.ts',
         'ts/iterator_compat.ts',
         'ts/node_list.ts',
