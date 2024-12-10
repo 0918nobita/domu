@@ -1,8 +1,8 @@
 import domu/internal/iterator_compat.{type JsIterator}
 import domu/internal/nullable.{type Nullable}
 import domu/types.{type Node}
-import gleam/iterator.{type Iterator}
 import gleam/option.{type Option}
+import gleam/yielder.{type Yielder}
 
 pub type Live
 
@@ -26,16 +26,16 @@ pub fn item(node_list: NodeList(a), index: Int) -> Option(Node) {
 fn entries_(node_list: NodeList(a)) -> JsIterator(#(Int, Node))
 
 /// [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeList/entries)
-pub fn entries(node_list: NodeList(a)) -> Iterator(#(Int, Node)) {
+pub fn entries(node_list: NodeList(a)) -> Yielder(#(Int, Node)) {
   node_list |> entries_ |> iterator_compat.to_gleam_iterator
 }
 
 pub fn to_list(node_list: NodeList(a)) -> List(Node) {
   node_list
   |> entries
-  |> iterator.map(fn(item) {
+  |> yielder.map(fn(item) {
     let #(_index, node) = item
     node
   })
-  |> iterator.to_list
+  |> yielder.to_list
 }
